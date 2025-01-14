@@ -5,7 +5,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Shovels = {}
 local OriginalShovelNames = {}
 
-local function AddComma(amount)
+local function AddComma(amount: number)
 	local formatted = amount
 	local k
 	while true do
@@ -26,14 +26,14 @@ for i,v in ReplicatedStorage.Settings.Items.Shovels:GetChildren() do
 
 	if Success and ItemInfo then
 		if not ItemInfo.BuyPrice then
-		 return
+			continue
 		end
 		
 		BuyPrice = ItemInfo.BuyPrice
 		
-		NewName = v.Name .. " ($" .. AddComma(BuyPrice) .. ")"
+		NewName = `{v.Name} (${AddComma(BuyPrice)})`
 	else
-		NewName = v.Name .. " (Can't See Price)"
+		NewName = `{v.Name} (Can't See Price)`
 	end
 	
 	table.insert(Shovels, NewName)
@@ -52,7 +52,7 @@ if Success then
 	
 	for Enchant, Info in EnchantModule.EnchantmentsList do
 		for Tier, _ in Info.Tiers do
-			table.insert(Enchantments, Enchant .. " " .. Tier)
+			table.insert(Enchantments, `{Enchant} {Tier}`)
 		end
 	end
 	
