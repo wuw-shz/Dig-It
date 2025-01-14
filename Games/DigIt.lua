@@ -94,6 +94,9 @@ Tab:CreateToggle({
 	CurrentValue = true,
 	Flag = "AutoFarm",
    Callback = function()
+      while Flags.AutoFarm.CurrentValue do
+         
+      end
    end
 })
 
@@ -286,9 +289,6 @@ Tab:CreateToggle({
 		local Visualizer = workspace:FindFirstChild("FrostByteVisualizer")
 		
 		while Flags.DigWalk.CurrentValue and task.wait() do
-         if not Flags.AutoFarm.CurrentValue then
-            continue
-         end
 			if Player:GetAttribute("IsDigging") then
 				continue
 			end
@@ -301,6 +301,13 @@ Tab:CreateToggle({
 			
 			local Visualizer = workspace:FindFirstChild("FrostByteVisualizer")
 			
+         if not Flags.AutoFarm.CurrentValue then
+            if Visualizer then
+               Visualizer:Destroy()
+            end
+            continue
+         end
+         
 			if not Visualizer then
 				Visualizer = Instance.new("Part")
 				Visualizer.Size = ZoneSize
