@@ -1,4 +1,4 @@
-﻿-- loadstring(game:HttpGet("https://raw.githubusercontent.com/alyssagithub/Scripts/refs/heads/main/FrostByte/Initiate.lua"))()
+﻿-- loadstring(game:HttpGet("https://raw.githubusercontent.com/wuw-shz/Dig-It/refs/heads/main/Initiate.lua"))()
 
 local function Notify(Text)
 	game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -8,12 +8,7 @@ local function Notify(Text)
 	})
 end
 
-local PlaceName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-
-PlaceName = PlaceName:gsub("%b[]", "")
-PlaceName = PlaceName:gsub("[^%a]", "")
-
-local Code = game:HttpGet(`https://raw.githubusercontent.com/alyssagithub/Scripts/refs/heads/main/FrostByte/Games/{PlaceName}.lua`)
+local Code = game:HttpGet(`https://raw.githubusercontent.com/wuw-shz/Dig-It/refs/heads/main/Games/DigIt.lua`)
 
 if Code then
 	Notify("Game found, the script is loading.")
