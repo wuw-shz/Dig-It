@@ -8,7 +8,7 @@ local function Notify(Text)
 	})
 end
 
-local Code = game:HttpGet(`https://raw.githubusercontent.com/wuw-shz/Dig-It/refs/heads/main/Games/DigIt.lua`)
+local Code = game:HttpGet(`https://raw.githubusercontent.com/wuw-shz/Dig-It/9daeee81f1964de945139caabfa383f75accaf35/Games/DigIt.lua`)
 
 if Code then
 	Notify("Game found, the script is loading.")
