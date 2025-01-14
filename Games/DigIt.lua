@@ -94,9 +94,6 @@ Tab:CreateToggle({
 	CurrentValue = true,
 	Flag = "AutoFarm",
    Callback = function()
-      while Flags.AutoFarm.CurrentValue do
-         
-      end
    end
 })
 
@@ -307,7 +304,7 @@ Tab:CreateToggle({
             end
             continue
          end
-         
+
 			if not Visualizer then
 				Visualizer = Instance.new("Part")
 				Visualizer.Size = ZoneSize
